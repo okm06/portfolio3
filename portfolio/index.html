@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OOO | Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="navbar" id="navbar">
+  <nav class="nav-inner">
+    <a href="#home" class="logo">OOO<span class="logo-dot">.</span></a>
+    <button class="theme-toggle" id="themeToggle" aria-label="테마 전환">
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-inner reveal">
+      <p class="hero-eyebrow">// hello world</p>
+      <h1 class="hero-title">안녕하세요, <span class="accent">OOO</span>입니다</h1>
+      <p class="hero-subtitle">사용자 경험을 중요하게 생각하는 <span class="typewriter" id="typewriter"></span></p>
+      <p class="hero-desc">
+        HTML, CSS, JavaScript를 기반으로 웹을 만들고, React와 Java(Thymeleaf)를 곁들여
+        조금씩 확장해나가는 것을 좋아하는 개발자입니다.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+        <a href="#contact" class="btn btn-ghost">연락하기</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="아래로 스크롤">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-head reveal">
+      <p class="section-num">01</p>
+      <h2 class="section-title">About</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-photo">
+        <div class="photo-frame">
+          <span>PHOTO</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>
+          안녕하세요! 저는 사용자에게 자연스러운 경험을 전달하는 것을 목표로 하는
+          주니어 프론트엔드 개발자 <strong>OOO</strong>입니다. HTML/CSS/JS로 화면을
+          만드는 과정을 가장 좋아하고, React로 조금씩 컴포넌트 기반 개발을 익혀가고 있습니다.
+        </p>
+        <p>
+          최근에는 Java와 Thymeleaf를 활용한 서버 사이드 렌더링 화면을 다뤄보며
+          프론트와 백엔드의 경계를 이해하는 데에도 관심을 넓히고 있습니다.
+          작은 디테일 하나하나가 사용자 경험을 바꾼다고 믿습니다.
+        </p>
+        <ul class="about-facts">
+          <li><span>이름</span>OOO</li>
+          <li><span>역할</span>Frontend Developer</li>
+          <li><span>위치</span>Seoul, Korea</li>
+          <li><span>이메일</span>your-email@example.com</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="section-head reveal">
+      <p class="section-num">02</p>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <div class="skill-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Backend / Server</h3>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Thymeleaf</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Tools</h3>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-head reveal">
+      <p class="section-num">03</p>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="projects-grid reveal">
+
+      <article class="project-card">
+        <div class="project-thumb"><span>PROJECT 01</span></div>
+        <div class="project-body">
+          <h3>프로젝트 이름 1</h3>
+          <p>프로젝트에 대한 한두 줄 설명을 여기에 작성하세요. 어떤 문제를 해결했는지 적어보세요.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub →</a>
+            <a href="#" class="project-link">Live Demo →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb"><span>PROJECT 02</span></div>
+        <div class="project-body">
+          <h3>프로젝트 이름 2</h3>
+          <p>프로젝트에 대한 한두 줄 설명을 여기에 작성하세요. 사용한 기술과 역할을 강조하세요.</p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub →</a>
+            <a href="#" class="project-link">Live Demo →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-thumb"><span>PROJECT 03</span></div>
+        <div class="project-body">
+          <h3>프로젝트 이름 3</h3>
+          <p>프로젝트에 대한 한두 줄 설명을 여기에 작성하세요. 성과나 배운 점을 적어도 좋아요.</p>
+          <div class="project-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Thymeleaf</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">GitHub →</a>
+            <a href="#" class="project-link">Live Demo →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section section-alt">
+    <div class="section-head reveal">
+      <p class="section-num">04</p>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">2026 - 현재</p>
+          <h3>회사/학교 이름</h3>
+          <p>여기에 역할과 주요 활동을 간단히 적어보세요.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">2024 - 2026</p>
+          <h3>이전 회사/학교 이름</h3>
+          <p>여기에 역할과 주요 활동을 간단히 적어보세요.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">2022 - 2024</p>
+          <h3>학력/부트캠프 이름</h3>
+          <p>여기에 배운 내용을 간단히 적어보세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+    <div class="section-head reveal">
+      <p class="section-num">05</p>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="contact-inner reveal">
+      <p class="contact-lead">새로운 기회나 협업 제안은 언제나 환영입니다.</p>
+      <a href="mailto:your-email@example.com" class="contact-email">your-email@example.com</a>
+      <div class="contact-links">
+        <a href="#" target="_blank" rel="noopener">GitHub</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Blog</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; <span id="year"></span> OOO. Built with HTML, CSS &amp; JS.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
