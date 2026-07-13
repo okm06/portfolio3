@@ -14,14 +14,14 @@
   --text-dim: #8b93a7;
   --accent: #8b7cf6;
   --accent-2: #5eead4;
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
   --container: 1080px;
   --transition: 0.3s ease;
 }
 
-:root[data-theme='light'] {
+:root[data-theme="light"] {
   --bg: #f7f7fb;
   --bg-alt: #eef0f6;
   --surface: #ffffff;
@@ -37,7 +37,9 @@ html {
 }
 
 body {
-  transition: background var(--transition), color var(--transition);
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 
 body {
@@ -86,7 +88,9 @@ img {
   background: rgba(10, 12, 17, 0.7);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--transition), background var(--transition);
+  transition:
+    border-color var(--transition),
+    background var(--transition);
 }
 
 .navbar.scrolled {
@@ -94,11 +98,11 @@ img {
   background: rgba(10, 12, 17, 0.92);
 }
 
-:root[data-theme='light'] .navbar {
+:root[data-theme="light"] .navbar {
   background: rgba(247, 247, 251, 0.7);
 }
 
-:root[data-theme='light'] .navbar.scrolled {
+:root[data-theme="light"] .navbar.scrolled {
   background: rgba(247, 247, 251, 0.92);
 }
 
@@ -128,7 +132,9 @@ img {
   cursor: pointer;
   margin-left: auto;
   margin-right: 24px;
-  transition: border-color var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .theme-toggle:hover {
@@ -138,7 +144,9 @@ img {
 
 .theme-toggle svg {
   position: absolute;
-  transition: opacity var(--transition), transform var(--transition);
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
 }
 
 .icon-moon {
@@ -151,12 +159,12 @@ img {
   transform: scale(0.5) rotate(-90deg);
 }
 
-:root[data-theme='light'] .icon-moon {
+:root[data-theme="light"] .icon-moon {
   opacity: 0;
   transform: scale(0.5) rotate(90deg);
 }
 
-:root[data-theme='light'] .icon-sun {
+:root[data-theme="light"] .icon-sun {
   opacity: 1;
   transform: scale(1) rotate(0deg);
 }
@@ -195,7 +203,7 @@ img {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -228,7 +236,9 @@ img {
   width: 24px;
   height: 2px;
   background: var(--text);
-  transition: transform var(--transition), opacity var(--transition);
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
 }
 
 /* ---------- Hero ---------- */
@@ -252,6 +262,19 @@ img {
   overflow: hidden;
   transition: transform 0.2s ease-out;
   will-change: transform;
+}
+
+/* 하단 페이드: 블롭 글로우가 overflow에 잘리며 생기는 경계선을
+   다음 섹션 배경색으로 녹여준다 */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 220px;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
 }
 
 .blob {
@@ -291,18 +314,33 @@ img {
 }
 
 @keyframes blobFloat1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, 50px) scale(1.15); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 50px) scale(1.15);
+  }
 }
 
 @keyframes blobFloat2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, 30px) scale(0.9); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 30px) scale(0.9);
+  }
 }
 
 @keyframes blobFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -40px) scale(1.1); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
 }
 
 .hero-inner {
@@ -362,7 +400,10 @@ img {
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: transform var(--transition), background var(--transition), border-color var(--transition);
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition);
 }
 
 .btn-primary {
@@ -387,6 +428,7 @@ img {
 
 .scroll-indicator {
   position: absolute;
+  z-index: 1; /* 하단 페이드(::after) 위에 표시 */
   bottom: 36px;
   left: 50%;
   transform: translateX(-50%);
@@ -408,9 +450,18 @@ img {
 }
 
 @keyframes scrollDown {
-  0% { opacity: 1; transform: translateY(0); }
-  70% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 0; transform: translateY(0); }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Sections (shared) ---------- */
@@ -435,7 +486,7 @@ img {
 
 .section-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 16px;
   margin-bottom: 48px;
 }
@@ -453,17 +504,9 @@ img {
   letter-spacing: -0.02em;
 }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* ---------- Reveal on scroll ----------
+   등장 애니메이션은 GSAP(ScrollTrigger)이 담당.
+   JS가 실패해도 콘텐츠가 보이도록 CSS에서는 숨기지 않는다. */
 
 /* ---------- About ---------- */
 .about-grid {
@@ -532,7 +575,9 @@ img {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 28px;
-  transition: transform var(--transition), border-color var(--transition);
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
 }
 
 .skill-card:hover {
@@ -542,11 +587,15 @@ img {
 
 .skill-card::after,
 .project-card::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(139, 124, 246, 0.28), transparent 60%);
+  background: radial-gradient(
+    280px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(139, 124, 246, 0.28),
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -578,6 +627,23 @@ img {
   color: var(--text-dim);
 }
 
+/* 학습중인 기술: 점선 테두리 + 뱃지로 구분 */
+.tag-learning {
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--accent-2) 45%, transparent);
+}
+
+.tag-learning em {
+  font-style: normal;
+  font-size: 0.62rem;
+  margin-left: 7px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+  color: var(--accent-2);
+  vertical-align: 1px;
+}
+
 /* ---------- Projects ---------- */
 .projects-grid {
   display: grid;
@@ -593,7 +659,9 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition), border-color var(--transition);
+  transition:
+    transform var(--transition),
+    border-color var(--transition);
 }
 
 .project-card:hover {
@@ -661,13 +729,16 @@ img {
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 5px;
   top: 6px;
   bottom: 6px;
   width: 1px;
   background: var(--border);
+  /* --line-progress는 GSAP이 스크롤에 맞춰 0→1로 채움 */
+  transform: scaleY(var(--line-progress, 1));
+  transform-origin: top;
 }
 
 .timeline-item {
@@ -826,10 +897,5 @@ img {
   }
   .blob {
     animation: none;
-  }
-  .reveal {
-    transition: none;
-    opacity: 1;
-    transform: none;
   }
 }
